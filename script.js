@@ -36,8 +36,15 @@ function unflipCards() {
     firstCard.classList.remove("flip");
     secondCard.classList.remove("flip");
     lockBoard = false;
-  }, 700);
+  }, 1200);
 }
+
+(function shuffle(){
+  cards.forEach((card) => {
+    let randomPosition = Math.floor(Math.random()*12)
+    card.style.order = randomPosition
+  })
+}());
 
 cards.forEach((card) => {
   card.addEventListener("click", flipCard);
